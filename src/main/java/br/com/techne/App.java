@@ -21,6 +21,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.config.annotation.web.configurers.*;
 
+import org.springframework.web.servlet.config.annotation.*;
+
+
 /**
  * Hello world!
  *
@@ -60,6 +63,17 @@ public class App
 		}
 
 	}
+
+ 	 @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**");
+            }
+        };
+    }
+
 
 	@Configuration
 	@EnableAuthorizationServer
@@ -131,5 +145,4 @@ public class App
 					.password("secret").roles("USER");
 			// @formatter:on
 	}
-
 }

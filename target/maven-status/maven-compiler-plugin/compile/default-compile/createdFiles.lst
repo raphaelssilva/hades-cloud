@@ -1,4 +1,6 @@
 br\com\techne\hades\controller\HomeController.class
-br\com\techne\App$ResourceServer.class
+br\com\techne\CorsFilter.class
 br\com\techne\App.class
+br\com\techne\App$ResourceServer.class
+br\com\techne\App$1.class
 br\com\techne\App$OAuth2Config.class
